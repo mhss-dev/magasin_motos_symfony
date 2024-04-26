@@ -49,8 +49,8 @@ class MotoController extends AbstractController
         $moto = $em->getRepository(Moto::class)->find($id);
 
 
-        if ($moto->getID() !== $id) {
-            return $this->redirectToRoute("app_moto_show", ['id' => $moto->getID()]);
+        if (!$moto) {
+            return $this->render('moto/404.html.twig');
         }
 
         return $this->render('moto/show.html.twig', [
