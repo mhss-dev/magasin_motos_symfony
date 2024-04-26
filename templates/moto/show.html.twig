@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails sur la Moto {{moto.getNom}} {% endblock %}
+
+{% block body %}
+    <div class="text-center">
+            <h1 class="text-uppercase">Moto numéro {{moto.id}}</h1>
+    </div>
+
+<div class="container-fluid d-flex justify-content-center align-items-center text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://www.dueruote.it/etc/designs/dueruote/assets/images/placeholder-tipo-moto-HY01.gif" class="card-img-top">
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li>Nom de la moto : {{moto.getNom()}}</li>
+                        <li>Marque de la moto : {{moto.getMarque()}}</li>
+                        <li>Couleur de la moto : {{moto.getCouleur()}}</li>
+                        <li>Année de production : {{moto.getAnnee()}} </li>
+                        <li>Prix de la moto : {{moto.getPrix()}} €</li>
+                        <a class="btn btn-success mt-3">Ajouter au panier</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

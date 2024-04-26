@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title "Liste des motos"%}
+
+{% block body %}
+        <h1 class="text-center mt-3">Liste des motos</h1>
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            {% for moto in motos %}
+                <div class="col-md-3 pt-2">
+                    <div class="card">
+                         <img src="https://www.dueruote.it/etc/designs/dueruote/assets/images/placeholder-tipo-moto-HY01.gif" class="card-img-top">
+                        <div class="card-body text-center ">
+                            <h5 class="card-title">{{ moto.getNom()}}</h5>
+                            <p class="card-text">Prix : {{ moto.getPrix()}} €</p>
+                            <a href="{{ path('app_moto_show', {'id': moto.id}) }}" class="btn btn-primary">Infos</a>
+                            <a href="{{ path('app_moto_edit', {'id': moto.id}) }}" class="btn btn-warning">Modifier</a>
+                            <a href="{{ path('app_moto_delete', {'id': moto.id}) }}" class="btn btn-danger" onclick="return confirmDelete()">Supprimer</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+    function confirmDelete() {
+        return confirm('Action irréversible, êtes-vous sûr ?');
+    }
+</script>
+
+{% endblock %}
