@@ -3,12 +3,23 @@
 {% block title "Liste des motos"%}
 
 {% block body %}
+
+  <div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold text-body-emphasis">Explorez la route du virtuelle</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Bienvenue à l'Autoshop, votre destination ultime pour une aventure en ligne sur deux roues ! Parcourez notre vaste sélection de motos, soigneusement sélectionnées pour les passionnés de vitesse, d'adrénaline et de style.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="#more" class="btn btn-primary btn-lg px-4 gap-3">En savoir plus</a>
+      </div>
+    </div>
+  </div>
+  
         <h1 class="text-center mt-3">Liste des motos</h1>
     <div class="container d-flex justify-content-center">
         <div class="row">
             {% for moto in motos %}
-                <div class="col-md-3 pt-2">
-                    <div class="card">
+                <div class="col-md-3 pt-2 pb-5">
+                    <div class="card" id="more">
                          <img src="https://www.dueruote.it/etc/designs/dueruote/assets/images/placeholder-tipo-moto-HY01.gif" class="card-img-top">
                         <div class="card-body text-center ">
                             <h5 class="card-title">{{ moto.getNom()}}</h5>

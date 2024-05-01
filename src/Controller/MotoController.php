@@ -82,7 +82,7 @@ class MotoController extends AbstractController
         $titre = $moto->getNom();
         $em->remove($moto);
         $em->flush();
-        $this->addFlash("danger", 'La moto' . $titre . " a bien été supprimée");
+        $this->addFlash("danger", 'La moto ' . $titre . " a bien été supprimée");
         return $this->redirectToRoute('app_moto_index');
 
     }
